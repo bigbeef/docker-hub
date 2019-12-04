@@ -1,6 +1,6 @@
 FROM centos:7
 
-COPY docker-entrypoint.sh healthcheck.sh aria2c aria2.conf supervisord.conf /
+COPY pyone/docker-entrypoint.sh pyone/healthcheck.sh pyone/aria2c pyone/aria2.conf pyone/supervisord.conf /
 
 RUN \
     echo '[mongodb-org-4.0]' >> /etc/yum.repos.d/mongodb-org-4.0.repo && \
