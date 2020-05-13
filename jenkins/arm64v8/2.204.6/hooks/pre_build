@@ -3,7 +3,7 @@ echo "start------cat /etc/os-release------"
 cat /etc/os-release
 echo "end------cat /etc/os-release------"
 echo "start------docker --version------"
-docker --version
+docker version
 echo "end------docker --version------"
 
 docker run --rm --privileged multiarch/qemu-user-static:register --reset
