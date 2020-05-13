@@ -1,2 +1,6 @@
 #!/bin/sh
+cat /etc/os-release
+
+docker --version
+
 docker run --rm --privileged multiarch/qemu-user-static:register --reset -p yes
