@@ -9,7 +9,8 @@ ENV GOSU_VERSION 1.12
 
 # 华为云镜像
 RUN sed -i "s@http://ftp.debian.org@https://mirrors.huaweicloud.com@g" /etc/apt/sources.list; \
-    sed -i "s@http://security.debian.org@https://mirrors.huaweicloud.com@g" /etc/apt/sources.list;
+    sed -i "s@http://security.debian.org@https://mirrors.huaweicloud.com@g" /etc/apt/sources.list; \
+    apt-get install apt-transport-https ca-certificates;
 
 RUN set -eux; \
 	savedAptMark="$(apt-mark showmanual)"; \
