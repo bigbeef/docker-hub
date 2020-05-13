@@ -1,4 +1,4 @@
-FROM debian:buster-slim
+FROM debian:stretch-slim
 
 # add our user and group first to make sure their IDs get assigned consistently, regardless of whatever dependencies get added
 RUN groupadd -r -g 999 redis && useradd -r -g redis -u 999 redis
@@ -8,9 +8,9 @@ RUN groupadd -r -g 999 redis && useradd -r -g redis -u 999 redis
 ENV GOSU_VERSION 1.12
 
 # 华为云镜像
-RUN sed -i "s@http://ftp.debian.org@https://mirrors.huaweicloud.com@g" /etc/apt/sources.list; \
-    sed -i "s@http://security.debian.org@https://mirrors.huaweicloud.com@g" /etc/apt/sources.list; \
-    apt-get install apt-transport-https ca-certificates;
+RUN rm -rf /etc/apt/sources.list
+
+COPY ./sources.list /etc/apt/sources.list
 
 RUN set -eux; \
 	savedAptMark="$(apt-mark showmanual)"; \
