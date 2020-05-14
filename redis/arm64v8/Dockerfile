@@ -7,7 +7,7 @@ RUN groupadd -r -g 999 redis && useradd -r -g redis -u 999 redis
 # https://github.com/tianon/gosu/releases
 ENV GOSU_VERSION 1.12
 
-# 华为云镜像
+
 RUN rm -rf /etc/apt/sources.list
 
 COPY ./sources.list /etc/apt/sources.list
