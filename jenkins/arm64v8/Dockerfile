@@ -1,6 +1,10 @@
 FROM adoptopenjdk/openjdk11:jdk-11.0.21_9
 
-RUN apt-get install -y git curl && rm -rf /var/lib/apt/lists/*
+RUN rm -rf /etc/apt/sources.list
+
+COPY ./sources.list /etc/apt/sources.list
+
+RUN apt-get update && apt-get install -y git curl && rm -rf /var/lib/apt/lists/*
 
 
 ARG user=jenkins
