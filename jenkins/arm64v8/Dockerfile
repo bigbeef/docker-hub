@@ -7,7 +7,7 @@ ARG group=jenkins
 ARG uid=1000
 ARG gid=1000
 ARG jenkins_url=https://mirrors.huaweicloud.com/jenkins/war-stable
-ARG jenkins_version=2.401.3
+ARG jenkins_version=2.414.3
 
 ENV JENKINS_HOME=/var/jenkins_home JENKINS_VERSION=${jenkins_version}
 
