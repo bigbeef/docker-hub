@@ -1,6 +1,6 @@
 FROM adoptopenjdk/openjdk11:jdk-11.0.21_9-centos
 
-RUN  apt-get install -y curl && rm -rf /var/lib/apt/lists/*
+RUN  yum install -y curl
 
 ARG user=jenkins
 ARG group=jenkins
