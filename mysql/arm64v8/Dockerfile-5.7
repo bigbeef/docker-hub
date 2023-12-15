@@ -12,9 +12,8 @@ MAINTAINER Brother In Arms <project.biarms@gmail.com>
 # add our user and group first to make sure their IDs get assigned consistently, regardless of whatever dependencies get added
 RUN groupadd -r mysql && useradd -r -g mysql mysql
 
-RUN rm -rf /etc/apt/sources.list
-
-COPY ./sources.list /etc/apt/sources.list
+#RUN rm -rf /etc/apt/sources.list
+#COPY ./sources.list /etc/apt/sources.list
 
 # Changed from original - start: upgrade to 1.12 (was inspired by https://github.com/rothgar/rpi-wordpress/blob/master/mysql/Dockerfile)
 # add gosu for easy step-down from root
